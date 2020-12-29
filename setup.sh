@@ -4,7 +4,6 @@ minikube addons enable metallb
 minikube addons enable dashboard
 minikube addons enable metrics-server
 eval $(minikube docker-env)
-
-docker build -t nginx-image ./nginx/
 kubectl apply -f ./metallb-configmap.yaml
+docker build -t nginx-image ./nginx/
 kubectl apply -f ./nginx/nginx.yaml
